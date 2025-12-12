@@ -1,0 +1,46 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+    <html class="no-js" lang="{{ site.active_lang }}">
+<!--<![endif]-->
+
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header class="main-header">
+        {% include topbar.html %}
+    </header>
+
+    <div class="main-content">
+        <div class="sections">
+
+{% responsive_image_block %}
+  path: assets/images/art-4.png
+  alt: Parresia hands
+  class: "section--hands"
+  sizes: "(min-width: 800px) 30vw, 100vw"
+{% endresponsive_image_block %}
+
+            {% assign sections = page.sections %}
+            {% include sections.html sections=sections %}
+
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        {% include footer.html %}
+    </footer>
+
+    {% include scripts.html %}
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+# www.robotstxt.org/
+# Sitemap
+Sitemap: https://parresia.ca/sitemap.xml
+# Allow crawling of all content
+user-agent: *
+disallow:

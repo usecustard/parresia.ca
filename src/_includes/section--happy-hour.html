@@ -1,0 +1,36 @@
+<div class="section--happy-hour">
+    <div class="big-hero">
+
+{% responsive_image_block %}
+    path: assets/images/happy-hour.jpg
+    alt: Happy Hour Sparkling Faces
+    class: ""
+    sizes: "100vw"
+{% endresponsive_image_block %}
+
+{% responsive_image_block %}
+    path: assets/images/happy-hour-text.png
+    alt: Happy Hour
+    class: ""
+    sizes: "100vw"
+{% endresponsive_image_block %}
+    </div>
+    <div class="section-wrapper">
+        {{ section.content | markdownify }}
+    </div>
+
+    <div class="section-wrapper--split">
+        <div class="split">
+{% responsive_image_block %}
+    path: assets/images/art-6.png
+    alt: Focault art
+    class: ""
+    sizes: "40vw"
+{% endresponsive_image_block %}
+        </div>
+        <div class="split">
+            {{ section.disclaimer | markdownify }}
+        </div>
+    </div>
+
+</div>

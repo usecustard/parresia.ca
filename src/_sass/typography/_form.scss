@@ -1,0 +1,87 @@
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+    color: $lighter-gray;
+    font-style: italic;
+}
+
+form {
+
+    label {
+        color: $gray;
+        display: block;
+        padding: 1em 0.125em 0.25em 0.125em;
+        cursor: pointer;
+    }
+
+    input,
+    textarea,
+    select {
+        font-family: $body-font-family;
+        line-height: 1.5;
+        font-size: 1.2em;
+        padding: 0.25em 0.33em;
+        color: $gray;
+        display: block;
+        width: 100%;
+        background: transparent;
+    }
+
+    input,
+    textarea {
+        border: 3px solid $lighter-brand;
+        transition: border-color .3s ease-in-out;
+    }
+
+    textarea {
+        min-height: 10em;
+    }
+
+    input:focus,
+    textarea:focus,
+    label:active + input,
+    label:active + textarea {
+        outline: none;
+        border: 3px solid $brand;
+    }
+
+    select:focus {
+        outline: none;
+    }
+
+
+    .submit-wrapper {
+        text-align: center;
+        padding-top: 1.5em;
+        clear: both;
+    }
+
+    input[type=button],
+    input[type=submit],
+    input[type=reset]
+    button[type=button],
+    button[type=submit],
+    button[type=reset] {
+        font-family: $heading-font-family;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        background-color: $lighter-brand;
+        color: #fff;
+        border: none;
+        width: auto;
+        cursor: pointer;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0.5em 1em;
+        font-size: 1.5em;
+        line-height: 1.5;
+        border-radius: 2px;
+
+        &:hover {
+            background: $brand;
+        }
+
+    }
+
+}

@@ -1,0 +1,9 @@
+{% assign largest = resized | sort: 'width' | last %}
+{% capture srcset %}
+{% for i in resized %}
+    /{{ i.path }} {{ i.width }}w,
+{% endfor %}
+    /{{ path }} {{ original.width }}w
+{% endcapture %}
+
+<img src="/{{ path }}" {% if data %}{{ data }}{% endif %} alt="{{ alt }}" class="{{ class }}" srcset="{{ srcset | strip_newlines }}" sizes="{{ sizes }}" />

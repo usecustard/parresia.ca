@@ -1,0 +1,77 @@
+# Site settings
+title: Parrêsia
+image: og-image.jpg
+logo: parresia-logo.jpg
+
+version: 0.0.1
+url: "https://parresia.ca"
+baseurl: ''
+
+analytics-code: UA-152877314-2
+# maps-api: ########
+
+# Favicon settings - use realfavicon generator
+icon-color: '#ff2420'
+msapplication-TileColor: '#ff2420'
+theme-color: '#fdf2dc'
+
+# Build
+source: src
+destination: dist
+permalink: pretty
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+source_maps: true
+
+sass:
+  style: compressed # possible values: nested expanded compact compressed
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+
+include: [ "_redirects" ]
+exclude: [ "jekyll-ignored/" ]
+keep_files: [ "assets/images" ]
+
+plugins:
+  - jekyll-polyglot
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-responsive-image
+  - jekyll-tidy
+  - jekyll-last-modified-at
+
+# Polyglot
+languages: ["fr", "es", "en" ]
+default_lang: "fr"
+exclude_from_localization: ['assets', '_redirects', '404.html', 'browserconfig.xml', 'robots.txt', 'sitemap.xml']
+parallel_localization: false
+
+# Responsive image
+responsive_image:
+  template: _includes/responsive-image-templates/responsive-image.html
+  quality: 90
+  strip: true
+  base_path: assets/images/
+  output_path_format: assets/images/%{dirname}/%{filename}--%{width}.%{extension}
+  save_to_source: false
+  sizes:
+    - width: 320
+    - width: 384
+    - width: 455
+    - width: 512
+    - width: 640
+    - width: 683
+    - width: 768
+    - width: 800
+    - width: 960
+    - width: 1024
+    - width: 1200
+    - width: 1366
+    - width: 1440
+    - width: 1600
+    - width: 1920

@@ -1,0 +1,14 @@
+.main-footer {
+    background-color: #fff;
+}
+
+.footer {
+    background-color: #000;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    overflow: hidden;
+}

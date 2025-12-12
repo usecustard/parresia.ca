@@ -1,0 +1,148 @@
+.section--foucault {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    background-color: $brand-alt;
+    position: relative;
+    margin: 2rem 0;
+
+    .foucault-1,
+    .foucault-2 {
+        max-width: 33%;
+        margin: auto;
+    }
+
+    .foucault-3 {
+        width: 2rem;
+        background-position: center center;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+    }
+}
+
+.section--happy-hour {
+    display: block;
+
+    .big-hero {
+        @extend %content-padding;
+        width: 100%;
+    }
+
+    .section-wrapper {
+        padding-top: 0;
+    }
+}
+
+
+.person {
+    width: 100%;
+
+    @media ( min-width: $small-devices ) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch;
+    }
+
+    &__photo {
+        width: 100%;
+
+        @media ( min-width: $small-devices ) {
+            width: 45%;
+            margin-right: 5%;
+        }
+
+        img {
+            width: 100%;
+            border-top: 1px solid #fff;
+        }
+    }
+
+    &__desc {
+        width: 100%;;
+
+        @media ( min-width: $small-devices ) {
+            width: 50%;
+            margin-right: 5%;
+        }
+
+        h4 {
+            margin-top: 1em;
+        }
+    }
+
+}
+
+.section--hands {
+    padding: 2rem;
+    margin: auto;
+    background-color: $brand-alt;
+
+    @media ( min-width: $small-devices ) {
+        max-width: 30rem;
+        padding: 4rem 2rem 1rem;
+    }
+
+}
+
+.section-wrapper {
+    @extend %content-padding;
+    @extend %content-max-width;
+    background-color: $brand-alt;
+}
+
+.section-wrapper--split {
+    @extend %content-max-width;
+    background-color: $brand-alt;
+
+    @media ( min-width: $small-devices ) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    .split {
+        @extend %content-padding;
+
+        @media ( min-width: $small-devices ) {
+            width: 50%;
+        }
+    }
+}
+
+
+.section--left {
+    .section-wrapper {
+        @media ( min-width: $small-devices ) {
+            padding-right: 20rem;
+            padding-left: 2rem;
+        }
+    }
+}
+
+.section--default {
+    width: 100%;
+    flex: 2 1 auto;
+
+    @media ( min-width: $small-devices ) {
+        display: flex;
+        align-items: center;
+    }
+
+    .section-wrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        :first-child {
+            margin-top: 0;
+        }
+
+        :last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+}

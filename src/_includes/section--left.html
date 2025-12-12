@@ -1,0 +1,13 @@
+<div class="section--left">
+    <div class="section-wrapper">
+
+        {% if section.content %}
+            {{ section.content | markdownify }}
+        {% endif %}
+
+        {% if section.image %}
+            <img class="section--group-shot" alt="{{ section.image-alt }}" src="{{ site.baseurl | absolute_url }}/assets/images/{{ section.image }}" />
+        {% endif %}
+
+    </div>
+</div>

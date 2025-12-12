@@ -1,0 +1,12 @@
+<script src="{{ 'modernizr-3.6.0.min.js' | prepend: 'assets/js/vendor/' | absolute_url }}"></script>
+<script src="{{ 'objectFitPolyfill.min.js' | prepend: 'assets/js/vendor/' | absolute_url }}"></script>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="{{ 'mobile-chrome-vh-fix.js' | prepend: 'assets/js/vendor/' | absolute_url }}"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="{{ 'plugins.js' | prepend: 'assets/js/' | absolute_url }}"></script>
+<script src="{{ 'main.js' | prepend: 'assets/js/' | absolute_url }}"></script>
+
+{% if site.maps-api %}
+<script src="{{ 'lift-map.js' | prepend: 'assets/js/' | absolute_url }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ site.maps-api }}&libraries=places&callback=reallyInitMap" async defer></script>
+{% endif %}

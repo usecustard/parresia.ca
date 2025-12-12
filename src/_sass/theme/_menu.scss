@@ -1,0 +1,21 @@
+.menu {
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        font-family: $menu-font-family;
+        font-weight: $menu-font-weight;
+    }
+
+    &__link {
+        text-decoration: none;
+
+    }
+
+}
+
+.show-small {
+    @media (min-width: $small-devices) {
+        display:none!important;
+    }
+}

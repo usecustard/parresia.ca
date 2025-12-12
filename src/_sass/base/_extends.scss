@@ -1,0 +1,59 @@
+%topbar-padding {
+
+    @include margin(0.75,0); // if this is changed, the main-header top margin needs to be chaged too
+    @include padding(0,1);
+
+    @media ( min-width: $small-devices ) {
+        @include margin(1,0); // if this is changed, the main-header top margin needs to be chaged too
+        @include padding(0,2);
+    }
+
+}
+
+%content-padding {
+
+    @include margin(2,0);
+    @include padding(0,1);
+
+    @media ( min-width: $small-devices ) {
+        @include margin(3,0);
+        @include padding(0,3);
+    }
+
+    @media ( min-width: $large-devices ) {
+        @include margin(4,0);
+        @include padding(0,4);
+    }
+
+}
+
+
+%content-max-width {
+    max-width: #{ $max-width * 1.5 + 'rem'};
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+%footer-padding {
+
+    @include margin(1,0);
+    @include padding(0,1);
+
+    @media ( min-width: $small-devices ) {
+        @include margin(2,0);
+        @include padding(0,2);
+    }
+
+}
+
+%lead {
+    @include font-size(1.125);
+    @include line-height(1);
+
+    @media (min-width: $small-devices) {
+        @include font-size(1.5);
+        @include line-height(1.35);
+    }
+
+}

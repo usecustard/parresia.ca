@@ -1,0 +1,55 @@
+.hero {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
+
+    @media (min-width: $small-devices) {
+        height: 80vh;
+    }
+
+    .hero__content-wrapper {
+        @extend %content-padding;
+        padding-top: 0;
+        padding-bottom: 0;
+        max-width: #{ $max-width * 2 + 'rem'};
+        margin-left: auto;
+        margin-right: auto;
+
+        :first-child {
+            margin-top: 0;
+        }
+
+        :last-child {
+            margin-bottom: 0;
+        }
+
+        .hero-title {
+            font-weight: $heading-font-weight;
+            @include font-size(1.75);
+            @include line-height(1.35);
+            margin-top: 0;
+
+            @media (min-width: $small-devices) {
+                text-align: center;
+                @include font-size(3);
+                @include line-height(1.5);
+            }
+
+            @media (min-width: $large-devices) {
+                @include font-size(5);
+                @include line-height(2.5);
+            }
+
+        }
+
+        p {
+            @extend %lead;
+        }
+
+    }
+
+}

@@ -1,0 +1,14 @@
+
+{% for dest in site.data.nav-links %}
+<li class="menu__item">
+    <a class="menu__item__link" href="{{ dest.url }}" title="{{ dest.name }}" target="{{ dest.target }}">
+        {{ dest.name }}
+    </a>
+</li>
+{% endfor %}
+
+{% for lang in site.languages %}
+<li class="menu__item menu__item--lang">
+    <a class="menu__item__link" {% if lang == site.active_lang %}style="font-weight: bold;"{% endif %} href=" {% if lang == site.default_lang %}{{ page.url | absolute_url }} {% else %}{{ page.url | prepend: lang | absolute_url }}{% endif %}">{{ lang }}</a>
+</li>
+{% endfor %}

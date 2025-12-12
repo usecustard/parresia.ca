@@ -1,0 +1,61 @@
+/* Headings
+   ========================================================================== */
+
+// Headings Options
+// [ h1: size (in rem), line height (* leading), margin top (* leading), margin bottom (* leading) ]
+$headings: (
+    h1: (2.5, 2, 4, 1),
+    h2: (1.6875, 1.5, 2.5, .75),
+    h3: (1.375, 1, 2, .75),
+    h4: (1.2, 1, 1.5, .75),
+    h5: (1, 1, 2.5, .75),
+    h6: (1, 1, 2.5, .75)
+) !default;
+
+// Set headings sizes, line-heights and margins
+@each $heading, $properties in $headings {
+    #{$heading} {
+        @include font-size(nth($properties, 1));
+        @include line-height(nth($properties, 2));
+        @include margin-top(nth($properties, 3));
+        @include margin-bottom(nth($properties, 4));
+        color: $color-font-headings;
+        font-weight: $heading-font-weight;
+    }
+}
+
+// Set margins between headings
+h1 + h2 {
+    @include margin-top(1);
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+    @include margin-top(.5);
+}
+
+h5 + h6 {
+    @include margin-top(-.5);
+}
+
+h6 {
+    font-style: italic;
+    font-weight: normal;
+}
+
+// Change headings font if a heading font is set
+@if $heading-font-family != null {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $heading-font-family;
+    }
+}
+
+hgroup {
+    display: block;
+}

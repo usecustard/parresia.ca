@@ -1,0 +1,74 @@
+{% capture social-url %}
+    {% if site.default_lang == site.active_lang %}
+        {{ page.url | absolute_url }}
+    {% else %}
+        {{ page.url | prepend: lang | absolute_url }}
+    {% endif %}
+{% endcapture %}
+
+{% if site.analytics-code %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.analytics-code}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{site.analytics-code}}');
+</script>
+{% endif %}
+
+<link href="https://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="{{ site.active_lang }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="canonical" href="{{ page.permalink | absolute_url }}" />
+
+<!-- I18n_Headers -->
+<link rel="alternate" hreflang="x-default" href=" {{ page.permalink | absolute_url }}" />
+<link rel="alternate" hreflang="{{site.default_lang}}-CA" href=" {{ page.permalink | absolute_url }}" />
+{% for lang in site.languages %}
+{% if lang == site.default_lang %}
+  {% continue %}
+{% endif %}
+<link rel="alternate" hreflang="{{lang}}-CA" href=" {{ page.permalink | prepend: lang | absolute_url }}" />
+{% endfor %}
+
+<!-- Title & Desc -->
+<title>{{ page.title | strip }}</title>
+<meta name="description" content="{{ page.excerpt }}">
+
+<!-- Icons -->
+<link rel="shortcut icon" href="{{ 'favicon.ico' | prepend: 'assets/' | absolute_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ 'apple-touch-icon.png' | prepend: 'assets/images/' | absolute_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon-32x32.png' | prepend: 'assets/images/' | absolute_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon-16x16.png' | prepend: 'assets/images/' | absolute_url }}">
+<link rel="manifest" href="{{ 'site.webmanifest' | prepend: 'assets/' | absolute_url }}">
+<link rel="mask-icon" href="{{ 'safari-pinned-tab.svg' | prepend: 'assets/images/' | absolute_url }}" color="{{ site.icon-color }}">
+<meta name="msapplication-TileColor" content="{{ site.msapplication-TileColor }}">
+<meta name="theme-color" content="{{ site.theme-color }}">
+
+<!-- CSS & fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:500,500i,700,700i&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ 'main.css' | prepend: 'assets/css/' | absolute_url }}"/>
+
+<!-- Facebook -->
+<meta property="og:image" content="{{ site.image | strip | prepend: 'assets/images/' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:title" content="{{ page.title | strip }}">
+<meta property="og:description" content="{{ page.excerpt }}">
+<meta property="og:url" content="{{ social-url | strip | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page.title | strip }}">
+<meta name="twitter:description" content="{{ page.excerpt }}">
+<meta name="twitter:image" content="{{ site.image | strip | absolute_url }}">
+<meta name="twitter:url" content="{{ social-url | strip | absolute_url }}">
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ 'feed.xml' | absolute_url }}">

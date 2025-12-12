@@ -1,0 +1,5 @@
+{% for network in site.data.social-links %}
+    <a class="social-icon" href="{{ network.url }}" alt="{{ network.name }}" target="_blank">
+        {% include {{ network.name | downcase | prepend: 'icons/' | append: '.svg' }} %}
+    </a>
+{% endfor %}

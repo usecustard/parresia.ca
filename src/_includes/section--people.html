@@ -1,0 +1,26 @@
+<div class="section--people">
+    <div class="section-wrapper">
+
+    {% for person in section.people %}
+        <div class="person">
+
+            <div class="person__photo">
+{% responsive_image_block %}
+  path: assets/images/{{ person.image }}
+  alt: {{ person.name }}
+  class: ""
+  sizes: "(min-width: 800px) 50vw, 100vw"
+{% endresponsive_image_block %}
+            </div>
+
+            <div class="person__desc">
+                <h4>{{ person.name }}</h4>
+                <p><small>{{ person.content }}</small></p>
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+</div>

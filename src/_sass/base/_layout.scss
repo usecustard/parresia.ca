@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $brand-alt;
+    height: 100vh!important; // needs important to override forced 100% on body placed by scroll-reveal js
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+}
+
+.main-header {
+    grid-area: header;
+    width: 100%;
+}
+
+.main-content {
+    grid-area: content;
+}
+
+.main-footer {
+    grid-area: footer;
+    align-self: end;
+}

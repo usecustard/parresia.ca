@@ -1,0 +1,76 @@
+// Guttenberg stuff
+
+// Colors
+$dark-gray: #0f0f0f;
+$gray: #41403E;
+$light-gray: #d9d9d9;
+$brand: #ff2420;
+$brand-alt: #fdf2dc;
+
+$lighter-gray: rgba($light-gray,0.3);
+$lighter-brand: rgba($brand,0.3);
+$lighter-brand-alt: rgba($brand-alt,0.3);
+
+// Theme / Fonts
+$body-font-family: 'Roboto', sans-serif;
+$base-font-weight: 500;
+
+$heading-font-family: $body-font-family;
+$heading-font-weight: 700;
+
+$menu-font-family: $heading-font-family;
+$menu-font-weight: 400;
+$menu-font-weight--current: 700;
+
+// Paragraph indenting
+$paragraph-indent: false; // [ true / false ]
+
+// Base sizes
+$base-font-size: 112.5 !default; // 100 !default; // In %. Also used for mobile. Number only, no units.
+$base-font-size-desktop: 125 !default; // 112.5 !default; In %. Used to calculate the desktop font size. Number only, no units.
+
+$line-height: 1.515 !default;
+$line-height-small: 1.2;
+$max-width: 42 !default; // Number only, no units. Gets converted to REMs and pixels.
+
+$small-devices: 800px;
+$large-devices: 1200px;
+
+// Modular Scale
+$modular-scale: (
+    xxxl: 4.3,
+    xxl: 3.5,
+    xl: 3,
+    l: 2.5,
+    m: 2,
+    s: 1.6875,
+    xs: 1.4375,
+    xxs: 1.2,
+    xxxs: 1,
+    xxxxs: 0.8125
+) !default;
+
+// Mobile base & leading
+$base: 16 * ($base-font-size / 100);
+$leading: round($base * $line-height);
+$leading-rem: $leading / $base;
+
+// Colors
+$color-font-body: $dark-gray !default;
+$color-font-headings: $color-font-body !default;
+$color-font-light: $light-gray !default;
+$color-font-figcaption: $color-font-body !default;
+$color-font-quote: $brand !default;
+
+$color-link-normal: $brand;
+$color-link-hover: $lighter-brand;
+$color-link-active: $lighter-brand;
+$color-link-visited: $brand;
+
+$color-selection: #fff;
+$color-selection-background: $brand-alt;
+
+$hr-color: $color-font-body;
+$hr-margin: 2;
+$hr-margin-desktop: $hr-margin;
+$hr-height: 1; // [ 2 ] — In pixels, only for line style

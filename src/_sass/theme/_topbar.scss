@@ -1,0 +1,82 @@
+.topbar {
+
+    &__logo {
+        padding: 2rem 0;
+
+        a {
+            display: block;
+
+            img {
+                height: 8rem;
+                margin: 0 auto;
+            }
+
+        }
+
+    }
+
+    &__image {
+        background-image: url( /assets/images/art-texture.jpg );
+        background-size: cover;
+        background-position: center center;
+        height: 1rem;
+    }
+
+    &__main-menu {
+        background-color: #fff;
+
+        @media ( max-width: $small-devices ) {
+            background-color: $brand-alt;
+        }
+
+    }
+
+    .menu {
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        overflow: hidden;
+
+        @media ( max-width: $small-devices ) {
+            flex-flow: row wrap;
+        }
+
+        .menu__item {
+            cursor: pointer;
+            display: inline-block;
+            text-transform: uppercase;
+            text-align: center;
+
+            @media ( max-width: $small-devices ) {
+                width: 100%;
+
+                &--lang {
+                    max-width: 33%;
+                }
+
+            }
+
+            .menu__item__link {
+                @include padding(0.5,0.5);
+                line-height: 1;
+                display: inline-block;
+                text-decoration: none;
+                color: #000;
+
+                @media ( max-width: $small-devices ) {;
+                    @include padding(0.25,0.5);
+                    border-top: 1px solid rgba(0,0,0,0.3);
+                    display: block;
+                }
+
+            }
+
+        }
+
+    }
+
+}

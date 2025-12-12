@@ -1,0 +1,57 @@
+body,
+html {
+
+    @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+        margin: 0;
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: #{$base + 'px'};
+    font-size: #{$base-font-size + '%'};
+    font-weight: $base-font-weight;
+    font-family: $body-font-family;
+    color: $color-font-body;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+// Only adjust things I have follow up rules for
+
+table,
+td,
+th,
+ul,
+ol,
+dl,
+dt,
+li,
+p,
+blockquote,
+figure {
+    @include line-height(1);
+    @include margin(0, 0, 1);
+}
+
+// Clear margin for line breaks
+br {
+    margin-bottom: 0;
+}
+
+// Prevent `em` and `i` affecting `line-height` in all browsers.
+em,
+i {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+small {
+    display: block;
+    font-size: 80%;
+    line-height: $line-height;
+}

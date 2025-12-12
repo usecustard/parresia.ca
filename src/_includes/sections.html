@@ -1,0 +1,7 @@
+{% for section in sections %}
+    {% if section.class %}
+        {% include section--{{section.class}}.html section=section %}
+    {% else %}
+        {% include section--default.html section=section %}
+    {% endif %}
+{% endfor %}
