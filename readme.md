@@ -23,17 +23,63 @@ The HTML5 boilerplate server config, build, test and deploy tools have been remo
 
 ## Requirements
 
-You'll need ruby, sass, jekyll and a few gems to make your life easy. Assuming you have ruby installed:
-
-  `gem install sass --no-user-install`
-  `gem install jekyll bundler jekyll-paginate-v2 jekyll-feed jekyll-gist rouge wdm`
+- Ruby 3.3.0 (managed via rbenv)
+- Bundler
+- Node.js (for Netlify CLI)
+- ImageMagick (for responsive images)
 
 ## Getting started
 
-- Download or clone this repo
-- if you need deps run `bundle install`
-- hack it up!
-- Build with `jekyll build` or serve with `jekyll serve --watch`
+### Installation
+
+```bash
+# Install ImageMagick (if not already installed)
+brew install imagemagick
+
+# Install Ruby dependencies
+bundle install
+
+# Install Node dependencies (for Netlify CLI)
+npm install
+```
+
+### Development
+
+**Standard Jekyll server:**
+```bash
+npm run dev
+# or
+bundle exec jekyll serve
+```
+Site at http://localhost:4000
+
+**Netlify dev server (with redirects):**
+```bash
+npm run dev:netlify
+# or
+netlify dev
+```
+Site at http://localhost:8888
+
+### Build
+
+```bash
+npm run build
+# or
+bundle exec jekyll build
+```
+
+### Deployment
+
+**Production:**
+```bash
+npm run deploy
+```
+
+**Preview:**
+```bash
+npm run deploy:preview
+```
 
 ### Placeholder files you should definitely edit
 
